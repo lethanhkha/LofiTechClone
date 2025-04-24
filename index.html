@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đang chuyển hướng...</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background-color: #1C1C1D;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo img {
+            max-width: 100%; /* Đảm bảo logo không bị phóng to quá mức */
+            max-height: 200px; /* Giới hạn chiều cao của logo nếu cần */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="img/logo.webp" alt="Logo" />
+        </div>
+    </div>
+
+    <!-- Chuyển hướng sau 1 giây (tuỳ chỉnh theo ý muốn) -->
+    <script>
+        setTimeout(function() {
+            window.location.href = './html/home.html'; // Chuyển hướng đến home.html sau 1 giây
+        }, 1000); // Thời gian chờ 
+    </script>
+</body>
+</html>
