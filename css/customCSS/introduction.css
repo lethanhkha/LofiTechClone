@@ -1,0 +1,90 @@
+
+/* -----------------------introduction------------------------------  */
+
+.introduction {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F8F8FC;
+}
+
+.introduction-wrapper {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 100px;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+.introduction-wrapper h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: black;
+}
+
+.introduction-wrapper p {
+    font-size: 16px;
+    color: black;
+}
+
+.introduction-wrapper ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    gap: 5px;
+}
+
+.introduction-wrapper ul li:nth-child(odd)::before {
+    content: "● ";
+}
+
+.introduction-wrapper ul li:nth-child(even) {
+    margin-left: 15px;
+}
+
+.introduction-wrapper ul a {
+    text-decoration: none;
+    color: black;
+}
+
+.introduction-wrapper ul a:hover {
+    color: #2854E5;
+}
+/* ----------------------------- */
+.breadcrumb {
+    width: 100%;
+    padding: 20px 30px;
+    background-color: #F8F8FC;
+    margin-bottom: 20px;
+}
+
+.breadcrumb ul {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    list-style-type: none;
+}
+
+.breadcrumb ul li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.breadcrumb ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.breadcrumb ul li a:hover {
+    color: #2854E5;
+}
+
+.breadcrumb ul li a.breadcrumb-active {
+    color: #2854E5;
+}

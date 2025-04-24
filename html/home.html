@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <link rel="stylesheet" href="../css/customCSS/home.css">
+    <link rel="stylesheet" href="../css/customCSS/all.css">
+    <link rel="stylesheet" href="../css/fontawesome/fontawesomepro6.4.2.css">
+    <link rel="stylesheet" href="../css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../css/customCSS/productItem.css">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <script src="../js/fontawesome6.7.2.js"></script>
+    <script src="../js/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid p-0">
+        <header>
+            <a href="../html/home.html"><img class="logo" src="../img/logo.webp" alt="Logo"></a>
+            <form action="#">
+                <input type="text" name="search" id="search" placeholder="Tìm kiếm sản phẩm ...">
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+            <div class="header-right">
+                <div class="call">
+                    <i class="fa-solid fa-phone-volume" style="color: #ffffff;"></i>
+                    <a href="#">
+                        <small>Gọi mua hàng</small><br>
+                        <small>1900 1234</small>
+                    </a>
+                </div>
+                <div class="login">
+                    <i class="fa-regular fa-user"></i>
+                    <span>
+                        <a href="#"><small>Tài khoản</small></a><br>
+                        <a href="../html/login.html"><small>Đăng nhập</small></a>
+                    </span>
+                </div>
+                <a href="../html/cart.html" class="cart-wrapper">
+                    <div class="cart" id="cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <small>Giỏ hàng</small>
+                    </div>    
+                </a>
+            </div>
+        </header>
+        <nav>
+            <ul>
+                <li>
+                    <i class="fa-solid fa-list"></i> DANH MỤC SẢN PHẨM
+                    <ul class="submenu">
+                        <li><a href="../html/CategoryCamera.html">Máy ảnh</a></li>
+                        <li><a href="../html/CategoryLens.html">Ống kính</a></li>
+                        <li><a href="../html/CategoryCamcorder.html">Máy quay phim</a></li>
+                        <li><a href="../html/CategoryAccessories.html">Phụ kiện máy ảnh</a></li>
+                        <li><a href="../html/CategoryDrone.html">Drone</a></li>
+                    </ul>
+                </li>
+                <li class="active"><a href="../html/home.html">Trang chủ</a></li>
+                <li><a href="../html/introduction.html">Giới thiệu</a></li>
+                <li>
+                    <a href="../html/allProducts.html">Sản phẩm</a>
+                    <ul class="submenu-products">
+                        <li><a href="../html/newProducts.html">Sản phẩm mới</a></li>
+                        <li><a href="../html/featuredProducts.html">Sản phẩm nổi bật</a></li>
+                    </ul>
+                </li>
+                <li><a href="../html/contact.html">Liên hệ</a></li>
+            </ul>
+        </nav>
+        <section class="section-slider">
+            <div class="swiper-slider-main">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="../img/slider_1.jpg" alt="Slider 1" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../img/slider_2.jpg" alt="Slider 2" />
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="slide-content-right">
+                <img src="../img/img_banner_slide.jpg" alt="Banner 1">
+                <img src="../img/img_banner_slide_2.jpg" alt="Banner 2">
+            </div>
+        </section>
+        <section class="section-services">
+            <div class="services-wrapper">
+                <div class="service-item">
+                    <img width="54" height="54"
+                        src="//bizweb.dktcdn.net/100/482/909/themes/903912/assets/image_service1.png?1743048533918"
+                        alt="Đổi trả dễ dàng" data-was-processed="true">
+                    <div class="service-info">
+                        <strong>ĐỔI TRẢ DỄ DÀNG</strong>
+                        <small>Đổi trả trong 30 ngày đầu tiên cho tất cả các sản phẩm</small>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <img width="54" height="54"
+                        src="//bizweb.dktcdn.net/100/482/909/themes/903912/assets/image_service2.png?1743048533918"
+                        alt="Giao hàng toàn quốc" data-was-processed="true">
+                    <div class="service-info">
+                        <strong>GIAO HÀNG TOÀN QUỐC</strong>
+                        <small>Miễn phí giao hàng với các đơn hàng trị giá trên 1.000.000đ</small>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <img width="54" height="54"
+                        src="//bizweb.dktcdn.net/100/482/909/themes/903912/assets/image_service3.png?1743048533918"
+                        alt="Quà tặng hấp dẫn" data-was-processed="true">
+                    <div class="service-info">
+                        <strong>QUÀ TẶNG HẤP DẪN</strong>
+                        <small>Chương trình khuyến mãi cực lớn và hấp dẫn hàng tháng</small>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <img width="54" height="54"
+                        src="//bizweb.dktcdn.net/100/482/909/themes/903912/assets/image_service4.png?1743048533918"
+                        alt="Hỗ trợ online 24/7" data-was-processed="true">
+                    <div class="service-info">
+                        <strong>HỖ TRỢ ONLINE 24/7</strong>
+                        <small>Luôn hỗ trợ khách hàng 24/24 giờ các ngày trong tuần</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-categories">
+            <div class="category-item">
+                <div class="category-info">
+                    <a href="../html/CategoryCamera.html" class="category-info__title">Máy ảnh</a>
+                    <div class="category-info__count">7 sản phẩm</div>
+                </div>
+                <div class="category-image">
+                    <img width="125" height="125" src="../img/categories/mayanh.jpg" alt="Máy ảnh">
+                </div>
+            </div>
+            <div class="category-item">
+                <div class="category-info">
+                    <a href="../html/CategoryLens.html" class="category-info__title">Ống kính</a>
+                    <div class="category-info__count">8 sản phẩm</div>
+                </div>
+                <div class="category-image">
+                    <img width="125" height="125" src="../img/categories/ongkinh.jpg" alt="Máy ảnh">
+                </div>
+            </div>
+            <div class="category-item">
+                <div class="category-info">
+                    <a href="../html/CategoryCamcorder.html" class="category-info__title">Máy quay phim</a>
+                    <div class="category-info__count">6 sản phẩm</div>
+                </div>
+                <div class="category-image">
+                    <img width="125" height="125" src="../img/categories/mayquayphim.jpg" alt="Máy ảnh">
+                </div>
+            </div>
+            <div class="category-item">
+                <div class="category-info">
+                    <a href="../html/CategoryAccessories.html" class="category-info__title">Phụ kiện máy ảnh</a>
+                    <div class="category-info__count">0 sản phẩm</div>
+                </div>
+                <div class="category-image">
+                    <img width="125" height="125" src="../img/categories/phukien.jpg" alt="Máy ảnh">
+                </div>
+            </div>
+            <div class="category-item">
+                <div class="category-info">
+                    <a href="../html/CategoryDrone.html" class="category-info__title">Drone</a>
+                    <div class="category-info__count">0 sản phẩm</div>
+                </div>
+                <div class="category-image">
+                    <img width="125" height="125" src="../img/categories/drone.jpg" alt="Máy ảnh">
+                </div>
+            </div>
+        </section>
+        <div id="countdown-km-container">
+            <div class="km-title">
+                <a href="#">Flash sale</a>
+                <div class="km-timer">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 7V12H17" stroke="#14181F" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                        <path
+                            d="M12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20Z"
+                            stroke="#14181F" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                        <path d="M6.06418 2.00024L3 4.57139" stroke="#14181F" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                        <path d="M21.0041 4.57115L17.9399 2" stroke="#14181F" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                    </svg>
+                    <strong class="text">Kết thúc sau:</strong>
+                    <div id="countdown-km">
+                        <!-- JS -->
+                    </div>
+                </div>
+            </div>
+            <script>
+                const deadlineKm = new Date(Date.UTC(2025, 4, 1));
+
+                function toDaysHHMMSS(secs) {
+                    const days = Math.floor(secs / 86400);
+                    const hours = Math.floor((secs % 86400) / 3600);
+                    const mins = Math.floor((secs % 3600) / 60);
+                    const secsLeft = Math.floor(secs % 60);
+                    return `<strong>${days}</strong> ngày <strong>${hours}</strong> giờ <strong>${mins}</strong> phút <strong>${secsLeft}</strong> giây`;
+                }
+
+                setInterval(function () {
+                    const secondsTillDeadline = (deadlineKm.valueOf() / 1000) - (Date.now() / 1000);
+                    document.getElementById("countdown-km").innerHTML = toDaysHHMMSS(secondsTillDeadline);
+                }, 1000);
+            </script>
+
+
+            <div class="product-wrapper" id="promotions">
+                <!-- Sẽ được thêm vào bằng JS -->
+            </div>
+        </div>
+        <section class="section-products">
+            <a href="#">Máy ảnh</a>
+            <div class="product-wrapper" id="camera-products">
+                <!-- Sẽ được thêm vào bằng JS -->
+            </div>
+        </section>
+        <section class="section-products">
+            <a href="#">Ống kính</a>
+            <div class="product-wrapper" id="lenses-products">
+                <!-- Sẽ được thêm vào bằng JS -->
+            </div>
+        </section>
+        <section class="section-products">
+            <a href="#">Máy quay phim</a>
+            <div class="product-wrapper" id="camcorder-products">
+                <!-- Sẽ được thêm vào bằng JS -->
+            </div>
+        </section>
+        <div class="banner-bottom">
+            <img src="../img/banner_bottom.webp" alt="Banner bottom">
+        </div>
+        <footer>
+            <div class="footer-wrapper">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <img src="../img/logo-footer.webp" alt="Logo">
+                    </div>
+                    <div class="item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M4.58867 13.1879C2.56119 12.5189 2.44466 9.69477 4.41012 8.86094L17.7759 3.19061C19.691 2.37814 21.6219 4.30899 20.8094 6.22409L15.1391 19.5899C14.3052 21.5553 11.4811 21.4388 10.8121 19.4113L9.26792 14.7321L4.58867 13.1879Z"
+                                stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                        <p>Địa chỉ</p>
+                    </div>
+                    <div class="item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M6.42459 3.23775C7.51203 2.76707 8.77662 3.00825 9.61449 3.84612L9.9591 4.19073C11.0636 5.29519 11.3313 6.98519 10.6223 8.37694L9.97022 9.65693C9.58386 10.4153 9.72975 11.3363 10.3316 11.9381L12.0619 13.6684C12.6637 14.2702 13.5847 14.4161 14.3431 14.0298L15.6231 13.3777C17.0148 12.6687 18.7048 12.9364 19.8093 14.0409L20.1539 14.3855C20.9918 15.2234 21.2329 16.488 20.7623 17.5754C19.4986 20.4948 16.2974 21.9789 13.6038 20.2867C11.9845 19.2694 10.0931 17.8454 8.12386 15.8761C6.15459 13.9069 4.73063 12.0155 3.71332 10.3962C2.02107 7.70255 3.50523 4.50135 6.42459 3.23775Z"
+                                stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                        <p>1900 xxxx</p>
+                    </div>
+                    <div class="item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M4 6.35418C4.73294 5.52375 5.80531 5 7 5H17C18.0144 5 18.9407 5.37764 19.6458 6M4 6.35418C3.37764 7.05931 3 7.98555 3 9V15C3 17.2091 4.79086 19 7 19H17C19.2091 19 21 17.2091 21 15V9C21 7.80531 20.4762 6.73294 19.6458 6M4 6.35418L12 13L19.6458 6"
+                                stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                        <p>support@example.com</p>
+                    </div>
+                </div>
+                <div class="footer-about">
+                    <div class="footer-about-title">
+                        VỀ CHÚNG TÔI
+                    </div>
+                    <ul>
+                        <li><a href="../html/home.html">Trang chủ</a></li>
+                        <li><a href="../html/introduction.html">Giới thiệu</a></li>
+                        <li><a href="../html/allProducts.html">Sản phẩm</a></li>
+                        <li><a href="../html/contact.html">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-policy">
+                    <div class="footer-about-title">
+                        CHÍNH SÁCH
+                    </div>
+                    <ul>
+                        <li><a href="#">Chính sách giao hàng</a></li>
+                        <li><a href="#">Chính sách đổi trả</a></li>
+                        <li><a href="#">Chính sách bán hàng</a></li>
+                        <li><a href="#">Hướng dẫn trả góp</a></li>
+                    </ul>
+                </div>
+                <div class="footer-advise-payment-wrapper">
+                    <div class="footer-advise">
+                        <div class="footer-advise-title">
+                            TƯ VẤN KHÁCH HÀNG
+                        </div>
+                        <ul>
+                            <li><a href="#">Mua hàng: 1900 6750</a></li>
+                            <li><a href="#">Khiếu nại: 1900 6750</a></li>
+                            <li><a href="#">Bảo hành: 1900 6750</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-payment">
+                        <div class="footer-payment-title">
+                            PHƯƠNG THỨC THANH TOÁN
+                        </div>
+                        <div class="footer-payment-list">
+                            <img src="../img/payment/icon_payment_1.webp" alt="Payment">
+                            <img src="../img/payment/icon_payment_2.webp" alt="Payment">
+                            <img src="../img/payment/icon_payment_3.webp" alt="Payment">
+                            <img src="../img/payment/icon_payment_4.webp" alt="Payment">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+<script>
+    var swiper = new Swiper(".swiper-slider-main", {
+        loop: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+</script>
+<script src="../js/createElementProductItem.js"></script>
+<script src="../js/defineListProducts.js"></script>
+<script>
+    for (const camera of cameras.slice(0, 5))
+        createProductItem(document.getElementById('camera-products'), camera);
+
+    for (const lens of lenses.slice(0, 5))
+        createProductItem(document.getElementById('lenses-products'), lens);
+
+    for (const camcorder of camcorders.slice(0, 5))
+        createProductItem(document.getElementById('camcorder-products'), camcorder);
+
+    for (const promotion of promotions.slice(0, 5))
+        createProductItem(document.getElementById('promotions'), promotion);
+
+</script>
+
+
+</html>

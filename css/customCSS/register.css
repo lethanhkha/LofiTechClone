@@ -1,0 +1,148 @@
+
+/* -----------------------breadcrumb------------------------------  */
+
+.register-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F8F8FC;
+}
+
+.breadcrumb {
+    width: 100%;
+    padding: 20px 30px;
+    background-color: #F8F8FC;
+    margin-bottom: 20px;
+}
+
+.breadcrumb ul {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    list-style-type: none;
+}
+
+.breadcrumb ul li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.breadcrumb ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.breadcrumb ul li a:hover {
+    color: #2854E5;
+}
+
+.breadcrumb ul li a.breadcrumb-active {
+    color: #2854E5;
+}
+/* -----------------------register form------------------------------  */
+
+.form-register-wrapper {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 50px 0;
+}
+
+#register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
+
+#register-form input {
+    background-color: #EBEBEB; 
+    width: 500px;
+}
+
+.form-register-wrapper span:nth-child(1) {
+    font-size: 32px;
+}
+
+.form-register-wrapper a {
+    text-decoration: none;
+    color: #2854E5;
+}
+
+.login-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login-btn img {
+    width: 130px;
+    cursor: pointer;
+}
+
+
+.reg-notification {
+    display: flex;
+    width: max-content;
+    position: absolute;
+    top: 0;
+    left: 550px;
+    /* background: rgba(0, 0, 0, 0.8); */
+    padding: 5px 20px;
+    border-radius: 8px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    animation: fadeInOut 2s ease-in-out;
+    color: black;
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.notification-content svg {
+    width: 20px;
+    height: 20px;
+}
+
+.notification-content p {
+    margin: 0;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Animation for fade in and out */
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    10% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    90% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+    <link rel="stylesheet" href="../css/customCSS/login.css">
+    <link rel="stylesheet" href="../css/customCSS/all.css">
+    <link rel="stylesheet" href="../css/fontawesome/fontawesomepro6.4.2.css">
+    <link rel="stylesheet" href="../css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../css/bootstrap/bootstrap.css">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <script src="../js/fontawesome6.7.2.js"></script>
+    <script src="../js/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid p-0">
+        <header>
+            <a href="../html/home.html"><img class="logo" src="../img/logo.webp" alt="Logo"></a>
+            <form action="#">
+                <input type="text" name="search" id="search" placeholder="Tìm kiếm sản phẩm ...">
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+            <div class="header-right">
+                <div class="call">
+                    <i class="fa-solid fa-phone-volume" style="color: #ffffff;"></i>
+                    <a href="#">
+                        <small>Gọi mua hàng</small><br>
+                        <small>1900 1234</small>
+                    </a>
+                </div>
+                <div class="login">
+                    <i class="fa-regular fa-user"></i>
+                    <span>
+                        <a href="#"><small>Tài khoản</small></a><br>
+                        <a href="../html/login.html"><small>Đăng nhập</small></a>
+                    </span>
+                </div>
+                <a href="../html/cart.html" class="cart-wrapper">
+                    <div class="cart" id="cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <small>Giỏ hàng</small>
+                    </div>
+                </a>
+            </div>
+        </header>
+        <nav>
+            <ul>
+                <li>
+                    <i class="fa-solid fa-list"></i> DANH MỤC SẢN PHẨM
+                    <ul class="submenu">
+                        <li><a href="../html/CategoryCamera.html">Máy ảnh</a></li>
+                        <li><a href="../html/CategoryLens.html">Ống kính</a></li>
+                        <li><a href="../html/CategoryCamcorder.html">Máy quay phim</a></li>
+                        <li><a href="../html/CategoryAccessories.html">Phụ kiện máy ảnh</a></li>
+                        <li><a href="../html/CategoryDrone.html">Drone</a></li>
+                    </ul>
+                </li>
+                <li><a href="../html/home.html">Trang chủ</a></li>
+                <li><a href="../html/introduction.html">Giới thiệu</a></li>
+                <li>
+                    <a href="../html/allProducts.html">Sản phẩm</a>
+                    <ul class="submenu-products">
+                        <li><a href="../html/newProducts.html">Sản phẩm mới</a></li>
+                        <li><a href="../html/featuredProducts.html">Sản phẩm nổi bật</a></li>
+                    </ul>
+                </li>
+                <li><a href="../html/contact.html">Liên hệ</a></li>
+            </ul>
+        </nav>
+        <section class="login-wrapper">
+            <div class="breadcrumb">
+                <ul>
+                    <li><a href="../html/home.html">Trang chủ</a></li>
+                    <span class="mr_lr">&nbsp;<svg aria-hidden="true" focusable="false" data-prefix="fas"
+                            data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 320 512" class="svg-inline--fa fa-chevron-right fa-w-10">
+                            <path fill="currentColor"
+                                d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"
+                                class=""></path>
+                        </svg>&nbsp;</span>
+                    <li><a href="../html/login.html" class="breadcrumb-active">Đăng nhập tài khoản</a></li>
+                </ul>
+            </div>
+            <div class="form-login-wrapper">
+                <span>ĐĂNG NHẬP</span>
+                <span class="reg-link">Nếu bạn chưa có tài khoản <a href="../html/register.html">đăng ký tại
+                        đây</a></span>
+                <form action="#" id="login-form">
+                    <input class="form-control" type="text" name="username" id="username" placeholder="Tài khoản">
+                    <small id="errUsername"></small>
+                    <input class="form-control" type="password" name="password" id="password" placeholder="Mật khẩu">
+                    <small id="errPassword"></small>
+                    <button type="submit" class="btn btn-primary">Đăng nhập</button>
+                </form>
+                <span id="forgot-password">Quên mật khẩu?</span>
+                <div class="forgot-password-form">
+                    <input class="form-control" type="email" name="email-forgotpassword" id="email-forgotpassword"
+                        placeholder="Email">
+                    <button type="submit" class="btn btn-primary">Lấy lại mật khẩu</button>
+                </div>
+                <span>Hoặc đăng nhập bằng</span>
+                <div class="login-btn">
+                    <img src="../img/login-btn/fb-btn.svg" alt="Facebook">
+                    <img src="../img/login-btn/gp-btn.svg" alt="Google">
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="footer-wrapper">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <img src="../img/logo-footer.webp" alt="Logo">
+                    </div>
+                    <div class="item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M4.58867 13.1879C2.56119 12.5189 2.44466 9.69477 4.41012 8.86094L17.7759 3.19061C19.691 2.37814 21.6219 4.30899 20.8094 6.22409L15.1391 19.5899C14.3052 21.5553 11.4811 21.4388 10.8121 19.4113L9.26792 14.7321L4.58867 13.1879Z"
+                                stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                        <p>Địa chỉ</p>
+                    </div>
+                    <div class="item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M6.42459 3.23775C7.51203 2.76707 8.77662 3.00825 9.61449 3.84612L9.9591 4.19073C11.0636 5.29519 11.3313 6.98519 10.6223 8.37694L9.97022 9.65693C9.58386 10.4153 9.72975 11.3363 10.3316 11.9381L12.0619 13.6684C12.6637 14.2702 13.5847 14.4161 14.3431 14.0298L15.6231 13.3777C17.0148 12.6687 18.7048 12.9364 19.8093 14.0409L20.1539 14.3855C20.9918 15.2234 21.2329 16.488 20.7623 17.5754C19.4986 20.4948 16.2974 21.9789 13.6038 20.2867C11.9845 19.2694 10.0931 17.8454 8.12386 15.8761C6.15459 13.9069 4.73063 12.0155 3.71332 10.3962C2.02107 7.70255 3.50523 4.50135 6.42459 3.23775Z"
+                                stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                        <p>1900 xxxx</p>
+                    </div>
+                    <div class="item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M4 6.35418C4.73294 5.52375 5.80531 5 7 5H17C18.0144 5 18.9407 5.37764 19.6458 6M4 6.35418C3.37764 7.05931 3 7.98555 3 9V15C3 17.2091 4.79086 19 7 19H17C19.2091 19 21 17.2091 21 15V9C21 7.80531 20.4762 6.73294 19.6458 6M4 6.35418L12 13L19.6458 6"
+                                stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                        <p>support@example.com</p>
+                    </div>
+                </div>
+                <div class="footer-about">
+                    <div class="footer-about-title">
+                        VỀ CHÚNG TÔI
+                    </div>
+                    <ul>
+                        <li><a href="../html/home.html">Trang chủ</a></li>
+                        <li><a href="../html/introduction.html">Giới thiệu</a></li>
+                        <li><a href="../html/allProducts.html">Sản phẩm</a></li>
+                        <li><a href="../html/contact.html">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-policy">
+                    <div class="footer-about-title">
+                        CHÍNH SÁCH
+                    </div>
+                    <ul>
+                        <li><a href="#">Chính sách giao hàng</a></li>
+                        <li><a href="#">Chính sách đổi trả</a></li>
+                        <li><a href="#">Chính sách bán hàng</a></li>
+                        <li><a href="#">Hướng dẫn trả góp</a></li>
+                    </ul>
+                </div>
+                <div class="footer-advise-payment-wrapper">
+                    <div class="footer-advise">
+                        <div class="footer-advise-title">
+                            TƯ VẤN KHÁCH HÀNG
+                        </div>
+                        <ul>
+                            <li><a href="#">Mua hàng: 1900 6750</a></li>
+                            <li><a href="#">Khiếu nại: 1900 6750</a></li>
+                            <li><a href="#">Bảo hành: 1900 6750</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-payment">
+                        <div class="footer-payment-title">
+                            PHƯƠNG THỨC THANH TOÁN
+                        </div>
+                        <div class="footer-payment-list">
+                            <img src="../img/payment/icon_payment_1.webp" alt="Payment">
+                            <img src="../img/payment/icon_payment_2.webp" alt="Payment">
+                            <img src="../img/payment/icon_payment_3.webp" alt="Payment">
+                            <img src="../img/payment/icon_payment_4.webp" alt="Payment">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+<script>
+    const forgotBtn = document.getElementById("forgot-password");
+    const forgotForm = document.querySelector(".forgot-password-form");
+
+    forgotBtn.onclick = function () {
+        if (forgotForm.classList.contains("show")) {
+            forgotForm.classList.remove("show");
+            // Đợi animation hoàn tất rồi mới ẩn
+            setTimeout(() => {
+                forgotForm.style.display = "none";
+            }, 300);
+        } else {
+            forgotForm.style.display = "flex";
+            setTimeout(() => {
+                forgotForm.classList.add("show");
+            }, 10); // Delay nhỏ để CSS transition hoạt động
+        }
+    };
+
+    function setError(element, message, isError) {
+        element.style.color = 'red';
+        element.textContent = message;
+    }
+
+    function checkUsername() {
+        let username = document.querySelector('#username');
+        if (username.value.trim().length <= 0) {
+            setError(document.querySelector('#errUsername'), "Bạn không được để trống trường này!", true);
+            username.focus();
+            return false;
+        }
+        if (username.value.trim().length < 3) {
+            setError(document.querySelector('#errUsername'), "Tên đăng nhập phải có ít nhất 3 ký tự!", true);
+            username.focus();
+            return false;
+        }
+        if (!/^[a-zA-Z0-9_]+$/.test(username.value.trim())) {
+            setError(document.querySelector('#errUsername'), "Tên đăng nhập chỉ được chứa chữ cái, số và dấu gạch dưới!", true);
+            username.focus();
+            return false;
+        }
+        setError(document.querySelector('#errUsername'), "", false);
+        return true;
+    }
+    
+    function checkPassword() {
+        let password = document.querySelector('#password');
+        if (password.value.trim().length <= 0) {
+            setError(document.querySelector('#errPassword'), "Bạn không được để trống trường này!", true);
+            password.focus();
+            return false;
+        }
+        if (password.value.trim().length < 8) {
+            setError(document.querySelector('#errPassword'), "Mật khẩu phải có ít nhất 8 ký tự!", true);
+            password.focus();
+            return false;
+        }
+        setError(document.querySelector('#errPassword'), "", false);
+        return true;
+    }
+
+    function loginUser(event) {
+        event.preventDefault();
+        if (checkUsername() && checkPassword()) {
+            alert("Đăng nhập thành công!");
+            document.querySelector('#login-form').submit();
+        }
+    }
+
+    document.querySelector('#username').addEventListener('input', checkUsername);
+    document.querySelector('#password').addEventListener('input', checkPassword);
+    document.querySelector('#login-form').addEventListener('submit', loginUser);
+
+</script>
+
+</html>

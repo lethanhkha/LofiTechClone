@@ -1,0 +1,113 @@
+
+/* -----------------------breadcrumb------------------------------  */
+
+.login-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F8F8FC;
+}
+
+.breadcrumb {
+    width: 100%;
+    padding: 20px 30px;
+    background-color: #F8F8FC;
+    margin-bottom: 20px;
+}
+
+.breadcrumb ul {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    list-style-type: none;
+}
+
+.breadcrumb ul li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.breadcrumb ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.breadcrumb ul li a:hover {
+    color: #2854E5;
+}
+
+.breadcrumb ul li a.breadcrumb-active {
+    color: #2854E5;
+}
+
+.form-login-wrapper {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 50px 0;
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#login-form input {
+    background-color: #EBEBEB; 
+    width: 500px;
+}
+
+.form-login-wrapper span:nth-child(1) {
+    font-size: 32px;
+}
+
+.login-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login-btn img {
+    width: 130px;
+    cursor: pointer;
+}
+
+.form-login-wrapper a {
+    text-decoration: none;
+    color: #2854E5;
+}
+
+.forgot-password-form {
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.forgot-password-form.show {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.forgot-password-form input {
+    background-color: #EBEBEB; 
+    width: 500px;
+}
+
+#forgot-password:hover {
+    color: #2854E5;
+    cursor: pointer;
+}
