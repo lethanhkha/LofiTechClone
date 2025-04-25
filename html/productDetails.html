@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giỏ hàng</title>
-    <link rel="stylesheet" href="../css/customCSS/cart.css">
+    <title>Chi tiết sản phẩm</title>
     <link rel="stylesheet" href="../css/customCSS/all.css">
     <link rel="stylesheet" href="../css/fontawesome/fontawesomepro6.4.2.css">
     <link rel="stylesheet" href="../css/bootstrap/bootstrap.css">
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link rel="stylesheet" href="../css/customCSS/productDetails.css">
     <script src="../js/fontawesome6.7.2.js"></script>
+
 </head>
 
 <body>
@@ -40,7 +41,7 @@
                     <div class="cart" id="cart">
                         <i class="fa-solid fa-cart-shopping"></i>
                         <small>Giỏ hàng</small>
-                    </div>    
+                    </div>
                 </a>
             </div>
         </header>
@@ -68,49 +69,7 @@
                 <li><a href="../html/contact.html">Liên hệ</a></li>
             </ul>
         </nav>
-        <div class="cart-info-wrapper">
-            <div class="cart-info-title">Giỏ hàng của bạn</div>
-            <div class=""></div>
-            <table id="cart-table" class="table table-bordered w-75">
-                <thead>
-                    <tr>
-                        <th>Thông tin sản phẩm</th>
-                        <th>Đơn giá</th>
-                        <th>Số lượng</th>
-                        <th>Thành tiền</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- <tr>
-                        <td>
-                            <div class="cart-item">
-                                <img width="108" height="108"
-                                    src="../img/products/Camera/canon-eos-5d-mark-iv-500x500.webp" alt="">
-                                <div>
-                                    <p>Máy ảnh Nikon D850 (Body Only)</p>
-                                    <a href="#">Xóa</a>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="price-box">
-                                <span class="price">50.990.000₫</span>
-                                <span class="compare-price">57.990.000₫</span>
-                            </div>
-                        </td>
-                        <td><input type="number" class="form-control"></td>
-                        <td>50.990.000₫</td>
-                    </tr> -->
-
-                    <!-- Sẽ được thêm bằng JS -->
-            </table>
-            <div class="total-price">
-                <div class="total">Tổng tiền: 50.990.000₫</div>
-                <button type="button" class="btn btn-outline-primary">
-                    Thanh toán
-                </button>
-            </div>
-        </div>
+        <div id="product-details" class="product-detail-wrapper"></div>
         <footer>
             <div class="footer-wrapper">
                 <div class="footer-info">
@@ -190,149 +149,123 @@
             </div>
         </footer>
     </div>
-</body>
-<script>
+    <script src="../js/defineListProducts.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script>
+        //Hàm lấy thông tin sản phẩm đã lưu trong localStorage
+        function loadProductDetails() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productTitle = urlParams.get('product');
+            const productData = JSON.parse(localStorage.getItem('selectedProduct')) || {};
 
-    //Tạo 1 dòng sản phẩm trong giỏ hàng
-    function createCartRow(product) {
-        // product là object có các thuộc tính: name, image, price, comparePrice, quantity
+            const productDetails = document.getElementById('product-details');
 
-        // Tạo phần tử tr
-        const tr = document.createElement('tr');
-
-        tr.innerHTML = `
-        <td>
-            <div class="cart-item">
-                <img width="108" height="108" src="${product.image}" alt="">
-                <div>
-                    <p>${product.name}</p>
-                    <a href="#" onclick="removeCartItem(this)">Xóa</a>
-                </div>
-            </div>
-        </td>
-        <td>
-            <div class="price-box">
-                <span class="price">${product.price}</span>
-                <span class="compare-price">${product.comparePrice}</span>
-            </div>
-        </td>
-        <td><input type="number" class="form-control" value="${product.quantity}" onchange="updateTotal(this)"></td>
-        <td class="line-total">${product.price}</td>
-    `;
-
-        return tr;
-    }
-
-    //Định dạng tiền tệ
-    function formatCurrency(value) {
-        return new Intl.NumberFormat('vi-VN', {
-            style: 'currency',
-            currency: 'VND'
-        }).format(value);
-    }
-
-    //Cập nhật tổng tiền trong giỏ hàng
-    function updateTotal(input) {
-        const row = input.closest("tr");
-        const priceText = row.querySelector(".price").textContent.replace(/[^\d]/g, "");
-        let quantity = parseInt(input.value);
-
-        if (isNaN(quantity) || quantity < 0) {
-            quantity = 1;
-            input.value = 1;
-        }
-
-        if (quantity === 0) {
-            row.remove();
-
-            // Cập nhật localStorage khi xóa sản phẩm
-            cartProducts = cartProducts.filter(p => p.name !== name);
-            localStorage.setItem("cart", JSON.stringify(cartProducts));
-
-            updateCartTotal();
-            return;
-        }
-
-        const lineTotal = parseInt(priceText) * quantity;
-
-        row.querySelector(".line-total").textContent = formatCurrency(lineTotal);
-
-        // Cập nhật số lượng trong localStorage
-        const name = row.querySelector("p").textContent;
-        const product = cartProducts.find(p => p.name === name);
-        if (product) {
-            product.quantity = quantity;
-            localStorage.setItem("cart", JSON.stringify(cartProducts));
-        }
-
-        updateCartTotal(); // Cập nhật lại tổng tiền toàn bộ
-    }
-
-    function updateCartTotal() {
-        const rows = document.querySelectorAll("#cart-table tbody tr");
-        const totalBox = document.querySelector(".total-price");
-        let total = 0;
-
-        if (rows.length === 0) {
-            // Nếu không có sản phẩm
-            totalBox.style.display = "none";
-
-            // Hiển thị thông báo
-            const cartInfoWrapper = document.querySelector(".cart-info-wrapper");
-            let emptyMsg = cartInfoWrapper.querySelector(".empty-cart-msg");
-
-            if (!emptyMsg) {
-                emptyMsg = document.createElement("div");
-                emptyMsg.className = "empty-cart-msg";
-                emptyMsg.textContent = "Không có sản phẩm trong giỏ hàng.";
-                cartInfoWrapper.appendChild(emptyMsg);
+            if (!productTitle || !productData || productData.title !== decodeURIComponent(productTitle)) {
+                productDetails.innerHTML = `
+                    <div class="error-message">
+                        <h2>Sản phẩm không tồn tại hoặc thông tin không hợp lệ</h2>
+                    </div>
+                `;
+                return;
             }
 
-            return;
+            productDetails.innerHTML = `
+                <div class="product-detail-img">
+                    <img src="${productData.imageSrc}" alt="${productData.title}">
+                </div>
+                <div class="product-detail-info">
+                    <h1>${productData.title}</h1>
+                    <small class="brand">Thương hiệu: <b>Đang cập nhật</b></small>
+                    <div class="product-detail-price">
+                        <span class="product-detail-price">${productData.price}</span>
+                        ${productData.comparePrice ?
+                    `<span class="product-detail-compare-price">${productData.comparePrice}</span>` : ''}
+                    </div>
+                    <small class="vat">Giá đã bao gồm VAT</small>
+                    <div class="quantity">Số lượng: <input type="number" class="form-control" value="1" id="quantity"></div>
+                    <button class="btn btn-danger w-100">MUA NGAY</button>
+                    <div class="button-group">
+                        <button class="btn btn-primary w-50" id="cartBtn">THÊM VÀO GIỎ HÀNG</button>
+                        <button class="btn btn-primary w-50">TRẢ GÓP</button>
+                    </div>
+                    <div class="promotion">
+                        <div class="promotion-title">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+                                <path
+                                    d="M1.3125 11.026V19.3155C1.3125 20.0782 1.90181 20.6971 2.625 20.6971H9.1875V11.026H1.3125Z"
+                                    fill="#D23535"></path>
+                                <path
+                                    d="M19.6875 5.49972H15.5348C15.8327 5.28557 16.0886 5.07281 16.2671 4.88215C17.3263 3.76169 17.3263 1.93801 16.2671 0.81755C15.2381 -0.273898 13.4453 -0.271134 12.4176 0.81755C11.8479 1.41854 10.3386 3.86531 10.5473 5.49972H10.4528C10.6601 3.86531 9.15075 1.41854 8.58244 0.81755C7.55344 -0.271134 5.76056 -0.271134 4.73287 0.81755C3.675 1.93801 3.675 3.76169 4.73156 4.88215C4.91138 5.07281 5.16731 5.28557 5.46525 5.49972H1.3125C0.589312 5.49972 0 6.12005 0 6.8813V8.95367C0 9.33498 0.294 9.64446 0.65625 9.64446H9.1875V6.8813H11.8125V9.64446H20.3438C20.706 9.64446 21 9.33498 21 8.95367V6.8813C21 6.12005 20.412 5.49972 19.6875 5.49972ZM9.11006 5.45413C9.11006 5.45413 9.05494 5.49972 8.86725 5.49972C7.96031 5.49972 6.22913 4.50775 5.66344 3.90814C5.1135 3.32511 5.1135 2.37459 5.66344 1.79156C5.92987 1.50972 6.28294 1.35498 6.65831 1.35498C7.03237 1.35498 7.38544 1.50972 7.65188 1.79156C8.5365 2.72827 9.41588 5.12117 9.11006 5.45413ZM12.1314 5.49972C11.9451 5.49972 11.8899 5.45551 11.8899 5.45413C11.5841 5.12117 12.4635 2.72827 13.3481 1.79156C13.8771 1.22926 14.8024 1.2265 15.3366 1.79156C15.8878 2.37459 15.8878 3.32511 15.3366 3.90814C14.7709 4.50775 13.0397 5.49972 12.1314 5.49972Z"
+                                    fill="#D23535"></path>
+                                <path
+                                    d="M11.8125 11.026V20.6971H18.375C19.0995 20.6971 19.6875 20.0782 19.6875 19.3155V11.026H11.8125Z"
+                                    fill="#D23535"></path>
+                            </svg>
+                            KHUYẾN MÃI
+                        </div>
+                        <div class="promotion-list">
+                            <ul>
+                                <li>Nhập mã LOFI thêm 5% đơn hàng</li>
+                                <li>Giảm giá 10% khi mua từ sản phẩm thứ 2</li>
+                                <li>Tặng phiếu mua hàng khi mua từ 1000k</li>
+                                <li>Đổi trả hàng trong vòng 30 ngày</li>
+                            </ul>
+                        </div>
+                    </div>                
+                </div>
+            `;
+
+            const addToCartBtn = productDetails.querySelector('#cartBtn');
+            addToCartBtn.addEventListener('click', () => {
+                const quantity = parseInt(document.getElementById('quantity').value);
+                const product = {
+                    name: productData.title,
+                    image: productData.imageSrc,
+                    price: productData.price,
+                    comparePrice: productData.comparePrice,
+                    quantity: quantity
+                };
+                addToCart(product);
+            });
+        }
+        //Thêm sản phẩm vào giỏ hàng
+        function addToCart(product) {
+            try {
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const existing = cart.find(item => item.name === product.name);
+                if (existing) {
+                    existing.quantity += product.quantity;
+                } else {
+                    cart.push(product);
+                }
+                localStorage.setItem('cart', JSON.stringify(cart));
+
+                const notification = document.createElement('div');
+                notification.className = 'cart-notification';
+                notification.innerHTML = `
+                    <div class="notification-content">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 13L9 17L19 7" stroke="#00C4B4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="12" cy="12" r="10" stroke="#00C4B4" stroke-width="2"/>
+                        </svg>
+                        <p>Sản phẩm đã được thêm vào Giỏ hàng</p>
+                    </div>
+                `;
+                document.body.appendChild(notification);
+                setTimeout(() => {
+                    notification.remove();
+                }, 2000);
+            } catch (error) {
+                console.error("Lỗi khi thêm vào giỏ hàng:", error);
+            }
         }
 
-        // Có sản phẩm → xóa thông báo nếu có
-        const existingMsg = document.querySelector(".empty-cart-msg");
-        if (existingMsg) {
-            existingMsg.remove();
-        }
+        // Load product details when the page loads
+        window.onload = () => {
+            loadProductDetails();
+        };
 
-        totalBox.style.display = "block";
-
-        rows.forEach(row => {
-            const priceText = row.querySelector(".price").textContent.replace(/[^\d]/g, "");
-            const quantity = row.querySelector("input[type='number']").value;
-            const lineTotal = parseInt(priceText) * parseInt(quantity);
-
-            row.querySelector(".line-total").textContent = formatCurrency(lineTotal);
-            total += lineTotal;
-        });
-
-        document.querySelector(".total").textContent = `Tổng tiền: ${formatCurrency(total)}`;
-    }
-
-    function removeCartItem(link) {
-        const row = link.closest('tr');
-        const name = row.querySelector("p").textContent;
-
-        // Xóa dòng khỏi DOM
-        row.remove();
-
-        // Xóa khỏi mảng cartProducts và cập nhật localStorage
-        cartProducts = cartProducts.filter(p => p.name !== name);
-        localStorage.setItem("cart", JSON.stringify(cartProducts));
-
-        updateCartTotal();
-    }
-    const cartTableBody = document.querySelector("#cart-table tbody");
-    let cartProducts = JSON.parse(localStorage.getItem("cart")) || [];
-
-    cartProducts.forEach(product => {
-        const newRow = createCartRow(product);
-        cartTableBody.appendChild(newRow);
-    });
-    updateCartTotal();
-
-</script>
+    </script>
+</body>
 
 </html>

@@ -19,7 +19,7 @@
 <body>
     <div class="container-fluid p-0">
         <header>
-            <a href="../html/home.html"><img class="logo" src="../img/logo.webp" alt="Logo"></a>
+            <a href="../html/home.html"><img class="logo" src="../img/logo-banner/logo.webp" alt="Logo"></a>
             <form action="#">
                 <input type="text" name="search" id="search" placeholder="Tìm kiếm sản phẩm ...">
                 <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -52,20 +52,20 @@
                 <li>
                     <i class="fa-solid fa-list"></i> DANH MỤC SẢN PHẨM
                     <ul class="submenu">
-                        <li><a href="../html/CategoryCamera.html">Máy ảnh</a></li>
-                        <li><a href="../html/CategoryLens.html">Ống kính</a></li>
-                        <li><a href="../html/CategoryCamcorder.html">Máy quay phim</a></li>
-                        <li><a href="../html/CategoryAccessories.html">Phụ kiện máy ảnh</a></li>
-                        <li><a href="../html/CategoryDrone.html">Drone</a></li>
+                        <li><a href="../html/productList.html?category=cameras">Máy ảnh</a></li>
+                        <li><a href="../html/productList.html?category=lenses">Ống kính</a></li>
+                        <li><a href="../html/productList.html?category=camcorders">Máy quay phim</a></li>
+                        <li><a href="../html/productList.html?category=accessories">Phụ kiện máy ảnh</a></li>
+                        <li><a href="../html/productList.html?category=drone">Drone</a></li>
                     </ul>
                 </li>
                 <li class="active"><a href="../html/home.html">Trang chủ</a></li>
                 <li><a href="../html/introduction.html">Giới thiệu</a></li>
                 <li>
-                    <a href="../html/allProducts.html">Sản phẩm</a>
+                    <a href="../html/productList.html">Sản phẩm</a>
                     <ul class="submenu-products">
-                        <li><a href="../html/newProducts.html">Sản phẩm mới</a></li>
-                        <li><a href="../html/featuredProducts.html">Sản phẩm nổi bật</a></li>
+                        <li><a href="../html/productList.html?category=new">Sản phẩm mới</a></li>
+                        <li><a href="../html/productList.html?category=featured">Sản phẩm nổi bật</a></li>
                     </ul>
                 </li>
                 <li><a href="../html/contact.html">Liên hệ</a></li>
@@ -75,17 +75,17 @@
             <div class="swiper-slider-main">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <img src="../img/slider_1.jpg" alt="Slider 1" />
+                        <img src="../img/logo-banner/slider_1.jpg" alt="Slider 1" />
                     </div>
                     <div class="swiper-slide">
-                        <img src="../img/slider_2.jpg" alt="Slider 2" />
+                        <img src="../img/logo-banner/slider_2.jpg" alt="Slider 2" />
                     </div>
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
             <div class="slide-content-right">
-                <img src="../img/img_banner_slide.jpg" alt="Banner 1">
-                <img src="../img/img_banner_slide_2.jpg" alt="Banner 2">
+                <img src="../img/logo-banner/img_banner_slide.jpg" alt="Banner 1">
+                <img src="../img/logo-banner/img_banner_slide_2.jpg" alt="Banner 2">
             </div>
         </section>
         <section class="section-services">
@@ -214,37 +214,36 @@
                 }, 1000);
             </script>
 
-
             <div class="product-wrapper" id="promotions">
                 <!-- Sẽ được thêm vào bằng JS -->
             </div>
         </div>
         <section class="section-products">
             <a href="#">Máy ảnh</a>
-            <div class="product-wrapper" id="camera-products">
+            <div class="horizontal-scroll" id="camera-products">
                 <!-- Sẽ được thêm vào bằng JS -->
             </div>
         </section>
         <section class="section-products">
             <a href="#">Ống kính</a>
-            <div class="product-wrapper" id="lenses-products">
+            <div class="horizontal-scroll" id="lenses-products">
                 <!-- Sẽ được thêm vào bằng JS -->
             </div>
         </section>
         <section class="section-products">
             <a href="#">Máy quay phim</a>
-            <div class="product-wrapper" id="camcorder-products">
+            <div class="horizontal-scroll" id="camcorder-products">
                 <!-- Sẽ được thêm vào bằng JS -->
             </div>
         </section>
         <div class="banner-bottom">
-            <img src="../img/banner_bottom.webp" alt="Banner bottom">
+            <img src="../img/logo-banner/banner_bottom.webp" alt="Banner bottom">
         </div>
         <footer>
             <div class="footer-wrapper">
                 <div class="footer-info">
                     <div class="footer-logo">
-                        <img src="../img/logo-footer.webp" alt="Logo">
+                        <img src="../img/logo-banner/logo-footer.webp" alt="Logo">
                     </div>
                     <div class="item">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -336,19 +335,18 @@
 <script src="../js/createElementProductItem.js"></script>
 <script src="../js/defineListProducts.js"></script>
 <script>
-    for (const camera of cameras.slice(0, 5))
+    for (const camera of cameras)
         createProductItem(document.getElementById('camera-products'), camera);
 
-    for (const lens of lenses.slice(0, 5))
+    for (const lens of lenses)
         createProductItem(document.getElementById('lenses-products'), lens);
 
-    for (const camcorder of camcorders.slice(0, 5))
+    for (const camcorder of camcorders)
         createProductItem(document.getElementById('camcorder-products'), camcorder);
 
-    for (const promotion of promotions.slice(0, 5))
+    for (const promotion of promotions)
         createProductItem(document.getElementById('promotions'), promotion);
 
 </script>
-
 
 </html>

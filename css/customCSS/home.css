@@ -132,11 +132,15 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
+    align-items: center;
     padding: 20px;
     margin: 40px;
     background-color: #2854E5;
     border-radius: 12px;
+}
+
+#countdown-km-container .km-title {
+    align-self: flex-start;
 }
 
 .km-title {

@@ -40,7 +40,18 @@ function createProductItem(element, listItem) {
 
     //Tạo thẻ a dẫn đến link sản phẩm và img của sản phẩm
     const link = document.createElement('a');
-    link.href = linkHref;
+    link.href = `../html/productDetails.html?product=${encodeURIComponent(title)}`;
+
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        // Lưu vào localStorage
+        localStorage.setItem('selectedProduct', JSON.stringify(listItem));
+    
+        // Điều hướng
+        window.location.href = `../html/productDetails.html?product=${encodeURIComponent(title)}`;
+    });
+        
 
     const img = document.createElement('img');
     img.src = imageSrc;
@@ -112,13 +123,41 @@ function createProductItem(element, listItem) {
 
         // Update modal content using innerHTML
         modalContent.innerHTML = `
-            <h2 class="modal-title">${title}</h2>
-            <p class="modal-brand-info">Thương hiệu: Insta360 | Mã sản phẩm: Đang cập nhật</p>
-            <p class="modal-price">${price}</p>
-            ${comparePrice ? `<p class="modal-compare-price">${comparePrice}</p>` : ''}
-            <img src="${imageSrc}" alt="${title}" class="modal-image">
-            <button class="modal-close-btn">Đóng</button>
+            <div class="modal-content-left">
+                <img src="${imageSrc}" alt="${title}" class="modal-image">
+            </div>
+            <div class="modal-content-right">
+                <h2 class="modal-title">${title}</h2>
+                <p class="modal-brand-info">Thương hiệu: Insta360 | Mã sản phẩm: Đang cập nhật</p>
+                <div class="modal-price-box">
+                    <p class="modal-price">${price}</p>
+                    ${comparePrice ? `<p class="modal-compare-price">${comparePrice}</p>` : ''}
+                </div>
+                <div class="modal-content-color-box">
+                    Màu sắc:
+                    <div class="modal-content-color">
+                        <button class="btn btn-outline-dark">Đen</button>
+                        <button class="btn btn-outline-dark">Xanh</button>
+                    </div>
+                </div>
+                <div class="modal-add-cart">
+                    <input type="number" class="form-control w-25" value="1" min="1">
+                    <button class="btn btn-dark">Thêm vào giỏ hàng</button>
+                </div>
+                <button class="modal-close-btn">Đóng</button>
+            </div>
         `;
+
+        const addToCartBtn = modalContent.querySelector('.modal-add-cart button');
+        addToCartBtn.addEventListener('click', () => {
+            const productData = {
+                name: title,
+                image: imageSrc,
+                price: price,
+                comparePrice: comparePrice
+            };
+            addToCart(productData);
+        });
 
         // Add event listener for the close button
         const closeButton = modalContent.querySelector('.modal-close-btn');

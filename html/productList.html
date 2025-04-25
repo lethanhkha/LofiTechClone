@@ -4,22 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ống kính</title>
-    <link rel="stylesheet" href="../css/customCSS/CategoryLens.css">
+    <title>Tất cả sản phẩm</title>
+    <link rel="stylesheet" href="../css/customCSS/allProducts.css">
     <link rel="stylesheet" href="../css/customCSS/all.css">
+    <link rel="stylesheet" href="../css/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="../css/customCSS/productItem.css">
     <link rel="stylesheet" href="../css/fontawesome/fontawesomepro6.4.2.css">
-    <link rel="stylesheet" href="../css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="../css/bootstrap/bootstrap.css">
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     <script src="../js/fontawesome6.7.2.js"></script>
-    <script src="../js/swiper-bundle.min.js"></script>
+
 </head>
 
 <body>
     <div class="container-fluid p-0">
         <header>
-            <a href="../html/home.html"><img class="logo" src="../img/logo.webp" alt="Logo"></a>
+            <a href="../html/home.html"><img class="logo" src="../img/logo-banner/logo.webp" alt="Logo"></a>
             <form action="#">
                 <input type="text" name="search" id="search" placeholder="Tìm kiếm sản phẩm ...">
                 <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -43,7 +42,7 @@
                     <div class="cart" id="cart">
                         <i class="fa-solid fa-cart-shopping"></i>
                         <small>Giỏ hàng</small>
-                    </div>    
+                    </div>
                 </a>
             </div>
         </header>
@@ -52,20 +51,20 @@
                 <li>
                     <i class="fa-solid fa-list"></i> DANH MỤC SẢN PHẨM
                     <ul class="submenu">
-                        <li><a href="../html/CategoryCamera.html">Máy ảnh</a></li>
-                        <li><a href="../html/CategoryLens.html">Ống kính</a></li>
-                        <li><a href="../html/CategoryCamcorder.html">Máy quay phim</a></li>
-                        <li><a href="../html/CategoryAccessories.html">Phụ kiện máy ảnh</a></li>
-                        <li><a href="../html/CategoryDrone.html">Drone</a></li>
+                        <li><a href="../html/productList.html?category=cameras">Máy ảnh</a></li>
+                        <li><a href="../html/productList.html?category=lenses">Ống kính</a></li>
+                        <li><a href="../html/productList.html?category=camcorders">Máy quay phim</a></li>
+                        <li><a href="../html/productList.html?category=accessories">Phụ kiện máy ảnh</a></li>
+                        <li><a href="../html/productList.html?category=drone">Drone</a></li>
                     </ul>
                 </li>
                 <li><a href="../html/home.html">Trang chủ</a></li>
                 <li><a href="../html/introduction.html">Giới thiệu</a></li>
                 <li class="active">
-                    <a href="../html/allProducts.html">Sản phẩm</a>
+                    <a href="../html/productList.html">Sản phẩm</a>
                     <ul class="submenu-products">
-                        <li><a href="../html/newProducts.html">Sản phẩm mới</a></li>
-                        <li><a href="../html/featuredProducts.html">Sản phẩm nổi bật</a></li>
+                        <li><a href="../html/productList.html?category=new">Sản phẩm mới</a></li>
+                        <li><a href="../html/productList.html?category=featured">Sản phẩm nổi bật</a></li>
                     </ul>
                 </li>
                 <li><a href="../html/contact.html">Liên hệ</a></li>
@@ -82,11 +81,10 @@
                                 d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"
                                 class=""></path>
                         </svg>&nbsp;</span>
-                    <li><a href="../html/CategoryLens.html" class="breadcrumb-active">Ống kính</a></li>
+                    <li><a href="../html/allProducts.html" class="breadcrumb-active">Tất cả sản phẩm</a></li>
                 </ul>
             </div>
             <div class="wrapper">
-
                 <section class="siderbar">
                     <div class="sidebar-item">
                         <div class="sidebar-item-title">Loại sản phẩm</div>
@@ -166,13 +164,13 @@
                     </div>
                 </section>
                 <section class="productList">
-                    <img src="../img/banner-collection.webp" alt="Banner collection">
-                    <div id="lens-products">
+                    <img src="../img/logo-banner/banner-collection.webp" alt="Banner collection">
+                    <div id="all-products">
                         <!-- JS -->
                     </div>
                     <div class="page">
                         <div class="circle" id="prevpage">
-                            <</div>
+                            << /div>
                                 <div class="circle circle-active">1</div>
                                 <div class="circle">2</div>
                                 <div class="circle">3</div>
@@ -187,7 +185,7 @@
         <div class="footer-wrapper">
             <div class="footer-info">
                 <div class="footer-logo">
-                    <img src="../img/logo-footer.webp" alt="Logo">
+                    <img src="../img/logo-banner/logo-footer.webp" alt="Logo">
                 </div>
                 <div class="item">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -267,16 +265,52 @@
 <script src="../js/defineListProducts.js"></script>
 <script src="../js/createPagination.js"></script>
 <script>
+    // Đọc query parameter từ URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const category = urlParams.get('category') || 'all';
 
-    // Khởi tạo sản phẩm
-    if (lenses && lenses.length > 0) {
-        const totalPages = Math.ceil(lenses.length / productsPerPage);
-        createPaginationButtons(totalPages, 'lens-products', lenses);
-        displayProducts(currentPage, 'lens-products', lenses);
+    // Cập nhật thẻ <title> và breadcrumb
+    let titleText = 'Tất cả sản phẩm';
+    let productsToDisplay = allProducts;
+    if (category === 'new') {
+        titleText = 'Sản phẩm mới';
+        productsToDisplay = newproducts
+    } else if (category === 'featured') {
+        titleText = 'Sản phẩm nổi bật';
+        productsToDisplay = featuredProducts;
+    } else if (category === 'cameras') {
+        titleText = 'Máy ảnh';
+        productsToDisplay = cameras;
+    } else if (category === 'lenses') {
+        titleText = 'Ống kính';
+        productsToDisplay = lenses;
+    } else if (category === 'camcorders') {
+        titleText = 'Máy quay phim';
+        productsToDisplay = camcorders;
+    } else if (category === 'accessories') {
+        titleText = 'Phụ kiện máy ảnh';
+        productsToDisplay = accessories;
+    } else if (category === 'drone') {
+        titleText = 'Drone';
+        productsToDisplay = drones;
+    }
+    document.title = titleText;
+    const breadcrumbTitle = document.querySelector('.breadcrumb-active');
+    breadcrumbTitle.textContent = titleText;
+
+    // Hiển thị sản phẩm dựa trên danh mục
+    const productList = document.getElementById('product-list');
+
+    // Cập nhật danh sách sản phẩm
+    if (productsToDisplay && productsToDisplay.length > 0) {
+        const totalPages = Math.ceil(productsToDisplay.length / productsPerPage);
+        createPaginationButtons(totalPages, 'all-products', productsToDisplay);
+        displayProducts(currentPage, 'all-products', productsToDisplay);
     } else {
-        document.getElementById('lens-products').innerHTML = '<p class="bg-warning rounded ps-2 pe-2 pt-1 pb-1">Sản phẩm đang được cập nhật.</p>';
+        document.getElementById('all-products').innerHTML = '<p>Sản phẩm đang được cập nhật.</p>';
         document.querySelector('.page').style.display = 'none';
     }
+
 </script>
 
 </html>

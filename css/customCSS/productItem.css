@@ -1,3 +1,32 @@
+.horizontal-scroll {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    gap: 40px;
+    padding: 0 10px;
+    scroll-behavior: smooth;
+    margin: 40px;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+    height: 12px; /* chiều cao scrollbar ngang */
+}
+
+.horizontal-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 4px;
+}
+
+.horizontal-scroll::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 4px;
+}
+
+.horizontal-scroll::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
 .product-wrapper {
     width: 100%;
     display: flex;
@@ -22,7 +51,9 @@
     position: relative;
     background-color: #fff;
     overflow: hidden;
+    flex: 0 0 auto;
 }
+
 
 .product-item a {
     display: flex;
@@ -183,13 +214,20 @@
     background: white;
     padding: 20px;
     border-radius: 8px;
-    width: 500px;
+    width: 1000px;
     max-width: 90%;
     position: relative;
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 50px;
 }
+.modal-content-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .modal-title {
     font-size: 1.5rem;
     margin: 0;
@@ -198,6 +236,11 @@
     font-size: 0.9rem;
     color: #666;
     margin: 0;
+}
+.modal-price-box {
+    display: flex;
+    align-items: center;
+    gap: 30px;
 }
 .modal-price {
     font-size: 1.5rem;
@@ -210,6 +253,15 @@
     color: #666;
     text-decoration: line-through;
     margin: 0;
+}
+.modal-content-color-box {
+    display: flex;
+    flex-direction: column;
+}
+.modal-add-cart {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 .modal-image {
     width: 100%;

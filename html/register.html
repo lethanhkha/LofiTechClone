@@ -8,17 +8,15 @@
     <link rel="stylesheet" href="../css/customCSS/register.css">
     <link rel="stylesheet" href="../css/customCSS/all.css">
     <link rel="stylesheet" href="../css/fontawesome/fontawesomepro6.4.2.css">
-    <link rel="stylesheet" href="../css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../css/bootstrap/bootstrap.css">
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     <script src="../js/fontawesome6.7.2.js"></script>
-    <script src="../js/swiper-bundle.min.js"></script>
 </head>
 
 <body>
     <div class="container-fluid p-0">
         <header>
-            <img class="logo" src="../img/logo.webp" alt="Logo">
+            <a href="../html/home.html"><img class="logo" src="../img/logo-banner/logo.webp" alt="Logo"></a>
             <form action="#">
                 <input type="text" name="search" id="search" placeholder="Tìm kiếm sản phẩm ...">
                 <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -42,7 +40,7 @@
                     <div class="cart" id="cart">
                         <i class="fa-solid fa-cart-shopping"></i>
                         <small>Giỏ hàng</small>
-                    </div>
+                    </div>    
                 </a>
             </div>
         </header>
@@ -51,20 +49,20 @@
                 <li>
                     <i class="fa-solid fa-list"></i> DANH MỤC SẢN PHẨM
                     <ul class="submenu">
-                        <li><a href="../html/CategoryCamera.html">Máy ảnh</a></li>
-                        <li><a href="../html/CategoryLens.html">Ống kính</a></li>
-                        <li><a href="../html/CategoryCamcorder.html">Máy quay phim</a></li>
-                        <li><a href="../html/CategoryAccessories.html">Phụ kiện máy ảnh</a></li>
-                        <li><a href="../html/CategoryDrone.html">Drone</a></li>
+                        <li><a href="../html/productList.html?category=cameras">Máy ảnh</a></li>
+                        <li><a href="../html/productList.html?category=lenses">Ống kính</a></li>
+                        <li><a href="../html/productList.html?category=camcorders">Máy quay phim</a></li>
+                        <li><a href="../html/productList.html?category=accessories">Phụ kiện máy ảnh</a></li>
+                        <li><a href="../html/productList.html?category=drone">Drone</a></li>
                     </ul>
                 </li>
                 <li><a href="../html/home.html">Trang chủ</a></li>
                 <li><a href="../html/introduction.html">Giới thiệu</a></li>
                 <li>
-                    <a href="../html/allProducts.html">Sản phẩm</a>
+                    <a href="../html/productList.html">Sản phẩm</a>
                     <ul class="submenu-products">
-                        <li><a href="../html/newProducts.html">Sản phẩm mới</a></li>
-                        <li><a href="../html/featuredProducts.html">Sản phẩm nổi bật</a></li>
+                        <li><a href="../html/productList.html?category=new">Sản phẩm mới</a></li>
+                        <li><a href="../html/productList.html?category=featured">Sản phẩm nổi bật</a></li>
                     </ul>
                 </li>
                 <li><a href="../html/contact.html">Liên hệ</a></li>
@@ -112,7 +110,7 @@
             <div class="footer-wrapper">
                 <div class="footer-info">
                     <div class="footer-logo">
-                        <img src="../img/logo-footer.webp" alt="Logo">
+                        <img src="../img/logo-banner/logo-footer.webp" alt="Logo">
                     </div>
                     <div class="item">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

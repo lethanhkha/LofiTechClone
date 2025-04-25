@@ -135,12 +135,163 @@ const camcorders = [
     },
 ];
 
+const accessories = [];
+const drones = [];
 
 // Danh sách tất cả sản phẩm
-const allProducts = [...cameras, ...lenses, ...camcorders];
+const allProducts = [...cameras, ...lenses, ...camcorders, ...accessories, ...drones];
 
 // Tìm các sản phẩm có comparePrice (tức là có khuyến mãi) để hiển thị trên flash sale
 const promotions = allProducts
     .filter(product => product.comparePrice && product.comparePrice.trim() !== "")
-    .slice(0, 5); //Giới hạn 5 sản phẩm trên flash sale
+    .slice(0, 5);
 
+const newproducts = [
+    {
+        title: 'Blackmagic Pocket Cinema Camera 6K Pro',
+        imageSrc: '../img/products/NewProducts/blackmagic-6k-pro-2-500x500.webp',
+        price: '58.900.000₫',
+        comparePrice: '64.000.000₫'
+    },
+    {
+        title: 'Máy quay phim Sony FX3 | Nhập Khẩu',
+        imageSrc: '../img/products/NewProducts/sony-fx3-1-500x500.webp',
+        price: '27.890.000₫',
+        comparePrice: '30.000.000₫'
+    },
+    {
+        title: 'Canon RF 70-200mm f/4L IS USM',
+        imageSrc: '../img/products/NewProducts/Canon-RF-70-200mm-f4L-IS-USM.webp',
+        price: '32.890.000₫',
+        comparePrice: '36.000.000₫'
+    },
+    {
+        title: 'Máy quay phim Canon XA65',
+        imageSrc: '../img/products/NewProducts/canon-xa55-500x500.webp',
+        price: '28.990.000₫',
+        comparePrice: '32.000.000₫'
+    },
+    {
+        title: 'Canon RF 24mm f/1.8 Macro IS STM',
+        imageSrc: '../img/products/NewProducts/Canon-RF-24mm-f1.8-Macro-IS-STM.webp',
+        price: '18.900.000₫',
+        comparePrice: '21.000.000₫'
+    },
+    {
+        title: 'Máy Quay Phim Canon XF 705',
+        imageSrc: '../img/products/NewProducts/canon-xf705-01-500x500.webp',
+        price: '32.800.000₫',
+        comparePrice: '36.000.000₫'
+    },
+    {
+        title: 'Máy quay phim Canon EOS C70 (Body Only)',
+        imageSrc: '../img/products/NewProducts/canon-c70-cinema-camera-rf-mount-1-500x500.webp',
+        price: '118.000.000₫',
+        comparePrice: '125.000.000₫'
+    },
+    {
+        title: 'Canon RF 135mm f/1.8 L IS USM',
+        imageSrc: '../img/products/NewProducts/Canon-RF-135mm-f1.8-L-IS-USM.webp',
+        price: '77.690.000₫',
+        comparePrice: '82.000.000₫'
+    },
+    {
+        title: 'Nikon NIKKOR Z DX 18-140mm f/3.5-6.3 VR',
+        imageSrc: '../img/products/NewProducts/Nikon-NIKKOR-Z-DX-18-140mm-f3.5-6.3-VR.webp',
+        price: '19.800.000₫',
+        comparePrice: '21.000.000₫'
+    },
+    {
+        title: 'Nikon NIKKOR Z 800mm f/6.3 VR S',
+        imageSrc: '../img/products/NewProducts/Nikon-NIKKOR-Z-800mm-f6.3-VR-S.webp',
+        price: '160.000.000₫',
+        comparePrice: '170.000.000₫'
+    },
+    {
+        title: 'Samyang AF 35-150mm f/2-2.8 FE (Sony E-mount)',
+        imageSrc: '../img/products/NewProducts/samyang-35-150-1.webp',
+        price: '30.800.000₫',
+        comparePrice: '34.000.000₫'
+    },
+    {
+        title: 'Nikon NIKKOR Z 85mm f/1.2 S',
+        imageSrc: '../img/products/NewProducts/Nikon-NIKKOR-Z-85mm-f1.2-S.webp',
+        price: '86.000.000₫',
+        comparePrice: '93.000.000₫'
+    }
+];
+
+const featuredProducts = [
+    {
+        title: 'Canon RF 24mm f/1.8 Macro IS STM',
+        imageSrc: '../img/products/NewProducts/Canon-RF-24mm-f1.8-Macro-IS-STM.webp',
+        price: '18.900.000₫',
+        comparePrice: '21.000.000₫'
+    },
+    {
+        title: 'Nikon NIKKOR Z DX 18-140mm f/3.5-6.3 VR',
+        imageSrc: '../img/products/NewProducts/Nikon-NIKKOR-Z-DX-18-140mm-f3.5-6.3-VR.webp',
+        price: '19.800.000₫',
+        comparePrice: '21.000.000₫'
+    },
+    {
+        title: 'Nikon NIKKOR Z 800mm f/6.3 VR S',
+        imageSrc: '../img/products/NewProducts/Nikon-NIKKOR-Z-800mm-f6.3-VR-S.webp',
+        price: '160.000.000₫',
+        comparePrice: '170.000.000₫'
+    },
+    {
+        title: 'Nikon NIKKOR Z 85mm f/1.2 S',
+        imageSrc: '../img/products/NewProducts/Nikon-NIKKOR-Z-85mm-f1.2-S.webp',
+        price: '86.000.000₫',
+        comparePrice: '93.000.000₫'
+    },
+    {
+        title: 'Máy ảnh Nikon D850 (Body Only)',
+        imageSrc: '../img/products/Camera/nikon-d8502-500x500.jpg',
+        price: '50.990.000₫',
+        comparePrice: '57.990.000₫'
+    },
+    {
+        title: 'Máy ảnh Nikon D780 + Lens 24-120mm F/4G ED Nano',
+        imageSrc: '../img/products/Camera/nikon-d780-with-24-120-lens-7-500x500.jpg',
+        price: '50.990.000₫',
+        comparePrice: '57.990.000₫'
+    },
+    {
+        title: 'Máy ảnh Nikon D6 Body Only',
+        imageSrc: '../img/products/Camera/nikon-d6-01-500x500.jpg',
+        price: '69.990.000₫',
+        comparePrice: '75.990.000₫'
+    },
+    {
+        title: 'Máy ảnh Canon EOS 850D (Body Only)',
+        imageSrc: '../img/products/camera/canon-eos-850d-body-2-500x500.jpg',
+        price: '69.990.000₫',
+        comparePrice: '75.990.000₫'
+    },
+    {
+        title: 'Máy ảnh Canon EOS 77D (Body Only)',
+        imageSrc: '../img/products/camera/canon-eos-77d-500x500.jpg',
+        price: '69.990.000₫',
+        comparePrice: '75.990.000₫'
+    },
+    {
+        title: 'Máy ảnh Canon EOS 850D (Body Only)',
+        imageSrc: '../img/products/camera/canon-eos-850d-body-2-500x500.jpg',
+        price: '69.990.000₫',
+        comparePrice: '75.990.000₫'
+    },
+    {
+        title: 'Máy ảnh Canon EOS 77D (Body Only)',
+        imageSrc: '../img/products/camera/canon-eos-77d-500x500.jpg',
+        price: '69.990.000₫',
+        comparePrice: '75.990.000₫'
+    },
+    {
+        title: 'Máy ảnh Canon EOS 850D (Body Only)',
+        imageSrc: '../img/products/camera/canon-eos-850d-body-2-500x500.jpg',
+        price: '69.990.000₫',
+        comparePrice: '75.990.000₫'
+    },
+];
